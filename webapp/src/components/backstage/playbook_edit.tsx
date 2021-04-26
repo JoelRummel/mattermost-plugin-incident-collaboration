@@ -318,7 +318,7 @@ const PlaybookEdit: FC<Props> = (props: Props) => {
     };
 
     const handleAssignDefaultCommander = (userId: string | undefined) => {
-        if (userId && playbook.default_commander_id !== userId) {
+        if ((userId || userId === '') && playbook.default_commander_id !== userId) {
             setPlaybook({
                 ...playbook,
                 default_commander_id: userId,
