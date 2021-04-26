@@ -328,7 +328,7 @@ const PlaybookEdit: FC<Props> = (props: Props) => {
     };
 
     const handleAnnouncementChannelSelected = (channelId: string | undefined) => {
-        if (channelId && playbook.announcement_channel_id !== channelId) {
+        if ((channelId || channelId === '') && playbook.announcement_channel_id !== channelId) {
             setPlaybook({
                 ...playbook,
                 announcement_channel_id: channelId,
